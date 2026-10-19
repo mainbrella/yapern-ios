@@ -54,7 +54,7 @@ struct MessageBodyView: View {
                 case .video(let part):
                     if let videoID = part.youtubeVideoID,
                        let videoURL = part.url ?? URL(string: "https://www.youtube.com/watch?v=\(videoID)") {
-                        Link(destination: videoURL) {
+                        Link(destination: MessageContent.externalLinkURL(videoURL)) {
                             videoPreview(videoID: videoID)
                         }
                         .buttonStyle(.plain)
@@ -70,7 +70,7 @@ struct MessageBodyView: View {
         for part in parts {
             var fragment = AttributedString(part.text)
             if let url = part.url {
-                fragment.link = url
+                fragment.link = MessageContent.externalLinkURL(url)
             }
             result.append(fragment)
         }
@@ -110,7 +110,7 @@ struct MessageBodyView: View {
                 .buttonStyle(.plain)
                 .accessibilityLabel("Open attached image in message detail")
         } else {
-            Link(destination: url) { imageView }
+            Link(destination: MessageContent.externalLinkURL(url)) { imageView }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Open original image")
         }

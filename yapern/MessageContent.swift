@@ -61,6 +61,20 @@ nonisolated enum MessageContent {
         return parts
     }
 
+    static func externalLinkURL(_ url: URL) -> URL {
+        guard var components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let scheme = components.scheme?.lowercased(), ["http", "https"].contains(scheme) else { return url }
+        let isSiteOrigin = scheme == "https" && components.host?.lowercased() == "yapern.com"
+            && (components.port == nil || components.port == 443)
+        guard !isSiteOrigin,
+              components.queryItems?.contains(where: { $0.name == "source" && $0.value == "yapern" }) != true else { return url }
+
+        // Append without re-encoding existing query parameters; keep fragments last.
+        let query = components.percentEncodedQuery ?? ""
+        components.percentEncodedQuery = query.isEmpty ? "source=yapern" : "\(query)&source=yapern"
+        return components.url ?? url
+    }
+
     private static func trimLink(_ candidate: String) -> String {
         let brackets: [Character: Character] = [")": "(", "]": "[", "}": "{"]
         var value = candidate

@@ -6,6 +6,23 @@
 	objectVersion = 110;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		A10000000000000000000010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00D9D60F3085F1020015E1AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00D9D6163085F1020015E1AA;
+			remoteInfo = yapern;
+		};
+		A20000000000000000000010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00D9D60F3085F1020015E1AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00D9D6163085F1020015E1AA;
+			remoteInfo = yapern;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		00D9D6173085F1020015E1AA /* yapern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yapern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10000000000000000000001 /* yapernTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = yapernTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -18,8 +35,16 @@
 			path = yapern;
 			sourceTree = "<group>";
 		};
-		A10000000000000000000002 /* yapernTests */ = {isa = PBXFileSystemSynchronizedRootGroup; path = yapernTests; sourceTree = "<group>"; };
-		A20000000000000000000002 /* yapernUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; path = yapernUITests; sourceTree = "<group>"; };
+		A10000000000000000000002 /* yapernTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = yapernTests;
+			sourceTree = "<group>";
+		};
+		A20000000000000000000002 /* yapernUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = yapernUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,8 +53,16 @@
 			files = (
 			);
 		};
-		A10000000000000000000003 = {isa = PBXFrameworksBuildPhase; files = (); };
-		A20000000000000000000003 = {isa = PBXFrameworksBuildPhase; files = (); };
+		A10000000000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		A20000000000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -76,24 +109,42 @@
 		};
 		A10000000000000000000004 /* yapernTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A10000000000000000000005;
-			buildPhases = (A10000000000000000000006, A10000000000000000000003);
-			dependencies = (A10000000000000000000009);
-			fileSystemSynchronizedGroups = (A10000000000000000000002);
+			buildConfigurationList = A10000000000000000000005 /* Build configuration list for PBXNativeTarget "yapernTests" */;
+			buildPhases = (
+				A10000000000000000000006 /* Sources */,
+				A10000000000000000000003 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A10000000000000000000009 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A10000000000000000000002 /* yapernTests */,
+			);
 			name = yapernTests;
 			productName = yapernTests;
-			productReference = A10000000000000000000001;
+			productReference = A10000000000000000000001 /* yapernTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		A20000000000000000000004 /* yapernUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A20000000000000000000005;
-			buildPhases = (A20000000000000000000006, A20000000000000000000003);
-			dependencies = (A20000000000000000000009);
-			fileSystemSynchronizedGroups = (A20000000000000000000002);
+			buildConfigurationList = A20000000000000000000005 /* Build configuration list for PBXNativeTarget "yapernUITests" */;
+			buildPhases = (
+				A20000000000000000000006 /* Sources */,
+				A20000000000000000000003 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A20000000000000000000009 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A20000000000000000000002 /* yapernUITests */,
+			);
 			name = yapernUITests;
 			productName = yapernUITests;
-			productReference = A20000000000000000000001;
+			productReference = A20000000000000000000001 /* yapernUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -146,18 +197,29 @@
 			files = (
 			);
 		};
-		A10000000000000000000006 = {isa = PBXSourcesBuildPhase; files = (); };
-		A20000000000000000000006 = {isa = PBXSourcesBuildPhase; files = (); };
+		A10000000000000000000006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		A20000000000000000000006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXContainerItemProxy section */
-		A10000000000000000000010 = {isa = PBXContainerItemProxy; containerPortal = 00D9D60F3085F1020015E1AA; proxyType = 1; remoteGlobalIDString = 00D9D6163085F1020015E1AA; remoteInfo = yapern; };
-		A20000000000000000000010 = {isa = PBXContainerItemProxy; containerPortal = 00D9D60F3085F1020015E1AA; proxyType = 1; remoteGlobalIDString = 00D9D6163085F1020015E1AA; remoteInfo = yapern; };
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXTargetDependency section */
-		A10000000000000000000009 = {isa = PBXTargetDependency; target = 00D9D6163085F1020015E1AA; targetProxy = A10000000000000000000010; };
-		A20000000000000000000009 = {isa = PBXTargetDependency; target = 00D9D6163085F1020015E1AA; targetProxy = A20000000000000000000010; };
+		A10000000000000000000009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00D9D6163085F1020015E1AA /* yapern */;
+			targetProxy = A10000000000000000000010 /* PBXContainerItemProxy */;
+		};
+		A20000000000000000000009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00D9D6163085F1020015E1AA /* yapern */;
+			targetProxy = A20000000000000000000010 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -288,7 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 755R3VBZ84;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -321,7 +383,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 755R3VBZ84;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -348,35 +410,35 @@
 			};
 			name = Release;
 		};
-		A10000000000000000000007 = {
+		A10000000000000000000007 /* Debug configuration for PBXNativeTarget "yapernTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.yapernTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yapern.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/yapern";
 			};
 			name = Debug;
 		};
-		A10000000000000000000008 = {
+		A10000000000000000000008 /* Release configuration for PBXNativeTarget "yapernTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.yapernTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yapern.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/yapern";
 			};
 			name = Release;
 		};
-		A20000000000000000000007 = {
+		A20000000000000000000007 /* Debug configuration for PBXNativeTarget "yapernUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -389,7 +451,7 @@
 			};
 			name = Debug;
 		};
-		A20000000000000000000008 = {
+		A20000000000000000000008 /* Release configuration for PBXNativeTarget "yapernUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -421,8 +483,22 @@
 			);
 			defaultConfigurationName = Release;
 		};
-		A10000000000000000000005 = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000007, A10000000000000000000008); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-		A20000000000000000000005 = {isa = XCConfigurationList; buildConfigurations = (A20000000000000000000007, A20000000000000000000008); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A10000000000000000000005 /* Build configuration list for PBXNativeTarget "yapernTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000000000000000000007 /* Debug configuration for PBXNativeTarget "yapernTests" */,
+				A10000000000000000000008 /* Release configuration for PBXNativeTarget "yapernTests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		A20000000000000000000005 /* Build configuration list for PBXNativeTarget "yapernUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20000000000000000000007 /* Debug configuration for PBXNativeTarget "yapernUITests" */,
+				A20000000000000000000008 /* Release configuration for PBXNativeTarget "yapernUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 	};
 	rootObject = 00D9D60F3085F1020015E1AA /* Project object */;

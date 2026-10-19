@@ -47,4 +47,44 @@ final class MessageContentTests: XCTestCase {
             XCTAssertTrue(MessageContent.parse(body).allSatisfy { $0.youtubeVideoID == nil }, body)
         }
     }
+
+    func testExternalLinksAppendSourceBeforeFragmentsWithoutReencodingQueries() throws {
+        let cases = [
+            ("https://example.com/page", "https://example.com/page?source=yapern"),
+            ("http://example.com/page#section", "http://example.com/page?source=yapern#section"),
+            ("https://example.com/page?", "https://example.com/page?source=yapern"),
+            ("https://example.com/page?x=1#section", "https://example.com/page?x=1&source=yapern#section"),
+            ("https://example.com/page?q=a%20b&x=~&token=a%2Fb%2bc#section",
+             "https://example.com/page?q=a%20b&x=~&token=a%2Fb%2bc&source=yapern#section"),
+            ("https://example.com/page?source=other", "https://example.com/page?source=other&source=yapern"),
+        ]
+        for (input, expected) in cases {
+            let url = try XCTUnwrap(URL(string: input))
+            let destination = MessageContent.externalLinkURL(url)
+            XCTAssertEqual(destination.absoluteString, expected, input)
+            XCTAssertEqual(MessageContent.externalLinkURL(destination), destination, input)
+        }
+    }
+
+    func testExternalLinksKeepSiteLinksExistingSourceAndOtherSchemesUnchanged() throws {
+        for input in [
+            "https://yapern.com/y/general/message?x=1#replies",
+            "https://YAPERN.com:443/y/general",
+            "https://example.com/page?source=yapern#section",
+            "https://example.com/page?source=other&source=yapern",
+            "https://example.com/page?%73ource=%79apern",
+            "mailto:person@example.com", "ftp://example.com/file",
+        ] {
+            let url = try XCTUnwrap(URL(string: input))
+            XCTAssertEqual(MessageContent.externalLinkURL(url), url, input)
+        }
+
+        for input in [
+            "http://yapern.com/page", "https://yapern.com:8443/page",
+            "https://www.yapern.com/page", "https://yapern.com.example.org/page",
+        ] {
+            let url = try XCTUnwrap(URL(string: input))
+            XCTAssertEqual(MessageContent.externalLinkURL(url).absoluteString, "\(input)?source=yapern", input)
+        }
+    }
 }
